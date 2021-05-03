@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sql-server-demo", "sql-server-demo\sql-server-demo.csproj", "{F2C235C4-1645-41C4-B03C-A08EFA2A73EA}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mysql-crud", "mysql-crud\mysql-crud.csproj", "{1EB1F87B-7365-475B-B912-4650049504F8}"
 EndProject
 Global
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F2C235C4-1645-41C4-B03C-A08EFA2A73EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F2C235C4-1645-41C4-B03C-A08EFA2A73EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F2C235C4-1645-41C4-B03C-A08EFA2A73EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F2C235C4-1645-41C4-B03C-A08EFA2A73EA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1EB1F87B-7365-475B-B912-4650049504F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1EB1F87B-7365-475B-B912-4650049504F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EB1F87B-7365-475B-B912-4650049504F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
