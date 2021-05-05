@@ -15,8 +15,8 @@ namespace mysql_crud
         public DonateForm()
         {
             InitializeComponent();
-            webBrowser1.Url = new Uri("http://google.com");
-            webBrowser1.Navigate("https://patreon.com/chorrny?utm_medium=social&utm_source=twitter&utm_campaign=creatorshare ");
+            webBrowser1.Url = new Uri("https://google.com");
+            webBrowser1.Navigate("https://www.instagram.com/chorrny/");
         }
     }
 }

@@ -20,9 +20,9 @@ namespace mysql_crud.user
         // Реєстрація нового юзера
         public void SignupNewUser(string login, string password)
         {
-            if (this.Any(u => u.Login == login))
-                throw new Exception("User with same name exists already.");
-            Add(new User(login, password));
+            //if (this.Any(u => u.Login == login))
+            //    throw new Exception("User with same name exists already.");
+            //Add(new User(login, password));
         }
     }
 }

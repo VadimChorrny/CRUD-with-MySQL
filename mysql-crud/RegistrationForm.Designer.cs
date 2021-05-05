@@ -34,7 +34,6 @@ namespace mysql_crud
             this.tbLogin = new System.Windows.Forms.TextBox();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.chNewAccount = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -83,22 +82,11 @@ namespace mysql_crud
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // chNewAccount
-            // 
-            this.chNewAccount.AutoSize = true;
-            this.chNewAccount.Location = new System.Drawing.Point(76, 399);
-            this.chNewAccount.Name = "chNewAccount";
-            this.chNewAccount.Size = new System.Drawing.Size(116, 21);
-            this.chNewAccount.TabIndex = 5;
-            this.chNewAccount.Text = " New Account";
-            this.chNewAccount.UseVisualStyleBackColor = true;
-            // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(361, 473);
-            this.Controls.Add(this.chNewAccount);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbLogin);
@@ -118,6 +106,5 @@ namespace mysql_crud
         private System.Windows.Forms.TextBox tbLogin;
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox chNewAccount;
     }
 }
