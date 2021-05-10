@@ -73,9 +73,7 @@ namespace mysql_crud.myclass
                 cmd.Parameters.Add("@desc", MySqlDbType.VarChar).Value = describe;
                 cmd.Parameters.Add("@price", MySqlDbType.VarChar).Value = price;
                 cmd.Parameters.Add("@fullname", MySqlDbType.VarChar).Value = fullname;
-
                 cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
-
                 cmd.ExecuteNonQuery();
                 con.Close();
             }

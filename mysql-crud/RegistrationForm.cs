@@ -20,6 +20,8 @@ namespace mysql_crud
 
         private CRUD crud;
         private User user;
+        // FOR ID
+        public int id { get; set; } // random
 
         public RegistrationForm()
         {
@@ -33,7 +35,7 @@ namespace mysql_crud
             //    users = new Users();
         }
 
-        private  void AddUserDataToDb()
+        private void AddUserDataToDb()
         {
             MySqlConnection con;
             string host = "localhost";
@@ -48,10 +50,14 @@ namespace mysql_crud
             DataSet ds = new DataSet();
             if (isUserExists())
             {
+                this.Hide();
+                UserMenu menu = new UserMenu();
+                menu.ShowDialog();
                 return;
             }
             else
             {
+                
                 con.Open();
                 using (MySqlCommand cmd = new MySqlCommand())
                 {
@@ -60,15 +66,19 @@ namespace mysql_crud
                     cmd.Connection = con;
                     cmd.Parameters.Add("@login", MySqlDbType.VarChar).Value = tbLogin.Text;
                     cmd.Parameters.Add("@password", MySqlDbType.VarChar).Value = tbPassword.Text;
+                    cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
                     if (cmd.ExecuteNonQuery() == 1)
-                        MessageBox.Show("Account has been created!");
+                    {
+                        //MessageBox.Show("Account has been created!");
+                        UserMenu menu = new UserMenu();
+                        menu.Show();
+                    }
                     else
-                        MessageBox.Show("Account doesn't created!");
+                        //MessageBox.Show("Account doesn't created!");
                     con.Close();
+
                 }
             }
-
-
         }
 
         private Boolean isUserExists()
@@ -85,16 +95,14 @@ namespace mysql_crud
             DataSet ds = new DataSet();
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM `users` WHERE `Login` = @uL",con);
-            cmd.Parameters.Add("@uL",MySqlDbType.VarChar).Value = tbLogin.Text;
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM `users` WHERE `Login` = @uL", con);
+            cmd.Parameters.Add("@uL", MySqlDbType.VarChar).Value = tbLogin.Text;
 
             adapter.SelectCommand = cmd;
             adapter.Fill(dt);
             if (dt.Rows.Count > 0)
-            {
-                MessageBox.Show("Account is exist!");
+                //MessageBox.Show("Account is exist!");
                 return true;
-            }
             else
                 return false;
 

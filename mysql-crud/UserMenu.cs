@@ -68,5 +68,11 @@ namespace mysql_crud
             DonateForm df = new DonateForm();
             df.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            EditAccount ed = new EditAccount();
+            ed.ShowDialog();
+        }
     }
 }
