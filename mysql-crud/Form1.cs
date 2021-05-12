@@ -15,6 +15,7 @@ namespace mysql_crud
     public partial class Form1 : Form
     {
         CRUD crud = new CRUD();
+        String str;
         public Form1()
         {
             InitializeComponent();
@@ -56,6 +57,7 @@ namespace mysql_crud
             crud.describe = txtCreateDescribes.Text; // real number
             crud.price = txtCreatePrice.Text;
             crud.fullname = txtCreateFullName.Text;
+            crud.str = str;
             crud.Create_data();
         }
         // UPDATE
@@ -65,6 +67,7 @@ namespace mysql_crud
             crud.describe = u_txtDescribes.Text; // real number
             crud.price = u_txtPrice.Text;
             crud.fullname = u_txtFullName.Text;
+            crud.str = str;
             crud.id = IDTXT.Text;
             crud.Update_data();
         }
@@ -89,12 +92,23 @@ namespace mysql_crud
                     u_txtDescribes.Text = (dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
                     u_txtPrice.Text = (dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
                     u_txtFullName.Text = (dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
-
                 }
             }
             catch
             {
                 MessageBox.Show("Dont Click the Header!");
+            }
+        }
+
+        private void c_btnOpenImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog opf = new OpenFileDialog();
+            opf.Filter = "Choose Image (*.jpg; *.png; *.gif) | *jpg; *.png; *.gif)";
+            if (opf.ShowDialog() == DialogResult.OK)
+            {
+                // HERE NEED OUTPUT IN USER START-PAGE
+                pictureBox1.Image = Image.FromFile(opf.FileName);
+                str = opf.FileName;
             }
         }
     }

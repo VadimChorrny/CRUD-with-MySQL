@@ -18,8 +18,12 @@ namespace user_start_page
         public UserMenu()
         {
             InitializeComponent();
+
         }
 
+
+
+        // OPEN CHAT
         private void button1_Click(object sender, EventArgs e)
         {
             MessageForm mf = new MessageForm();

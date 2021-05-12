@@ -34,6 +34,9 @@ namespace mysql_crud.myclass
         // FOR ID
         public string id { set; get; }
 
+        // FOR IMAGE
+        public string str { get; set; }
+
         // FOR SEARCH
         UserMenu userMenu;
 
@@ -47,13 +50,14 @@ namespace mysql_crud.myclass
             con.Open();
             using (MySqlCommand cmd = new MySqlCommand())
             {
-                cmd.CommandText = "INSERT INTO `products`(`Name`, `Describes`, `Price`,`Fullname`) VALUES (@name,@desc,@price,@fullname)";
+                cmd.CommandText = "INSERT INTO `products`(`Name`, `Describes`, `Price`,`Fullname`,`Image`) VALUES (@name,@desc,@price,@fullname,@image)";
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = con;
                 cmd.Parameters.Add("@name", MySqlDbType.VarChar).Value = name;
                 cmd.Parameters.Add("@desc", MySqlDbType.VarChar).Value = describe;
                 cmd.Parameters.Add("@price", MySqlDbType.VarChar).Value = price;
                 cmd.Parameters.Add("@fullname", MySqlDbType.VarChar).Value = fullname;
+                cmd.Parameters.Add("@image", MySqlDbType.Blob).Value = str;
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
@@ -65,7 +69,7 @@ namespace mysql_crud.myclass
             con.Open();
             using (MySqlCommand cmd = new MySqlCommand())
             {
-                cmd.CommandText = "UPDATE products SET Name = @name, Describes = @desc, Price = @price, Fullname = @fullname WHERE ID = @id";
+                cmd.CommandText = "UPDATE products SET Name = @name, Describes = @desc, Price = @price, Fullname = @fullname,Image = @image WHERE ID = @id";
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = con;
 
@@ -73,7 +77,10 @@ namespace mysql_crud.myclass
                 cmd.Parameters.Add("@desc", MySqlDbType.VarChar).Value = describe;
                 cmd.Parameters.Add("@price", MySqlDbType.VarChar).Value = price;
                 cmd.Parameters.Add("@fullname", MySqlDbType.VarChar).Value = fullname;
+                cmd.Parameters.Add("@image", MySqlDbType.Blob).Value = str;
+
                 cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
