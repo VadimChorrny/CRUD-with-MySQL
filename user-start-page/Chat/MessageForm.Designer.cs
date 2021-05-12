@@ -30,30 +30,16 @@ namespace user_start_page.Chat
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MessageForm));
-            this.picSend = new System.Windows.Forms.PictureBox();
             this.tbMessage = new System.Windows.Forms.TextBox();
             this.tbChat = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.picJoin = new System.Windows.Forms.PictureBox();
-            this.picClose = new System.Windows.Forms.PictureBox();
             this.tbUserName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.picSend)).BeginInit();
+            this.btnJoin = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnSend = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picJoin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             this.SuspendLayout();
-            // 
-            // picSend
-            // 
-            this.picSend.Image = global::user_start_page.Properties.Resources.paper_plane;
-            this.picSend.Location = new System.Drawing.Point(677, 497);
-            this.picSend.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picSend.Name = "picSend";
-            this.picSend.Size = new System.Drawing.Size(111, 78);
-            this.picSend.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSend.TabIndex = 8;
-            this.picSend.TabStop = false;
             // 
             // tbMessage
             // 
@@ -77,8 +63,8 @@ namespace user_start_page.Chat
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(161)))), ((int)(((byte)(244)))));
-            this.panel1.Controls.Add(this.picJoin);
-            this.panel1.Controls.Add(this.picClose);
+            this.panel1.Controls.Add(this.btnExit);
+            this.panel1.Controls.Add(this.btnJoin);
             this.panel1.Controls.Add(this.tbUserName);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 13);
@@ -86,28 +72,6 @@ namespace user_start_page.Chat
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(776, 105);
             this.panel1.TabIndex = 5;
-            // 
-            // picJoin
-            // 
-            this.picJoin.Image = global::user_start_page.Properties.Resources.joinbtn;
-            this.picJoin.Location = new System.Drawing.Point(591, 36);
-            this.picJoin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picJoin.Name = "picJoin";
-            this.picJoin.Size = new System.Drawing.Size(68, 35);
-            this.picJoin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picJoin.TabIndex = 7;
-            this.picJoin.TabStop = false;
-            // 
-            // picClose
-            // 
-            this.picClose.Image = global::user_start_page.Properties.Resources.exit;
-            this.picClose.Location = new System.Drawing.Point(674, 36);
-            this.picClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picClose.Name = "picClose";
-            this.picClose.Size = new System.Drawing.Size(67, 35);
-            this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picClose.TabIndex = 6;
-            this.picClose.TabStop = false;
             // 
             // tbUserName
             // 
@@ -128,38 +92,64 @@ namespace user_start_page.Chat
             this.label1.TabIndex = 0;
             this.label1.Text = "Enter name:";
             // 
+            // btnJoin
+            // 
+            this.btnJoin.Location = new System.Drawing.Point(573, 36);
+            this.btnJoin.Name = "btnJoin";
+            this.btnJoin.Size = new System.Drawing.Size(86, 36);
+            this.btnJoin.TabIndex = 6;
+            this.btnJoin.Text = "Join";
+            this.btnJoin.UseVisualStyleBackColor = true;
+            this.btnJoin.Click += new System.EventHandler(this.btnJoin_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(665, 35);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(86, 36);
+            this.btnExit.TabIndex = 7;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnSend
+            // 
+            this.btnSend.Location = new System.Drawing.Point(677, 496);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(113, 74);
+            this.btnSend.TabIndex = 8;
+            this.btnSend.Text = "Send";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
             // MessageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(246)))), ((int)(((byte)(195)))));
             this.ClientSize = new System.Drawing.Size(802, 582);
-            this.Controls.Add(this.picSend);
+            this.Controls.Add(this.btnSend);
             this.Controls.Add(this.tbMessage);
             this.Controls.Add(this.tbChat);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MessageForm";
             this.Text = "Chat with seller";
-            ((System.ComponentModel.ISupportInitialize)(this.picSend)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picJoin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox picSend;
         private System.Windows.Forms.TextBox tbMessage;
         private System.Windows.Forms.TextBox tbChat;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox picJoin;
-        private System.Windows.Forms.PictureBox picClose;
         private System.Windows.Forms.TextBox tbUserName;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnJoin;
+        private System.Windows.Forms.Button btnSend;
     }
 }

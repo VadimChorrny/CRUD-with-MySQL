@@ -14,30 +14,26 @@ namespace user_start_page.Chat
 {
     public partial class MessageForm : Form
     {
-        #region properties
-        bool alive = false;
+        bool alive = false; 
         UdpClient client;
-        const int LOCALPORT = 8001;
-        const int REMOTEPORT = 8001;
+        const int LOCALPORT = 8001; // port for give message
+        const int REMOTEPORT = 8001; // port for take message
         const int TTL = 20;
         const string HOST = "235.5.5.1";
         IPAddress groupAddress;
         string userName;
-        #endregion
+
         public MessageForm()
         {
             InitializeComponent();
-
-            // START INIT
-            picJoin.Enabled = true;
-            picClose.Enabled = false;
-            picSend.Enabled = false;
-            tbChat.ReadOnly = true;
+            btnJoin.Enabled = true; 
+            btnExit.Enabled = false; 
+            btnSend.Enabled = false; 
+            tbChat.ReadOnly = true; 
             groupAddress = IPAddress.Parse(HOST);
-
         }
-        #region work_with_udp
-        private void picJoin_Click(object sender, EventArgs e)
+
+        private void btnJoin_Click(object sender, EventArgs e)
         {
             userName = tbUserName.Text;
             tbUserName.ReadOnly = true;
@@ -53,9 +49,9 @@ namespace user_start_page.Chat
                 byte[] data = Encoding.Unicode.GetBytes(message);
                 client.Send(data, data.Length, HOST, REMOTEPORT);
 
-                picJoin.Enabled = false;
-                picClose.Enabled = true;
-                picSend.Enabled = true;
+                btnJoin.Enabled = false;
+                btnExit.Enabled = true;
+                btnSend.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -91,7 +87,7 @@ namespace user_start_page.Chat
                 MessageBox.Show(ex.Message);
             }
         }
-        private void picSend_Click(object sender, EventArgs e)
+        private void btnSend_Click(object sender, EventArgs e)
         {
             try
             {
@@ -105,7 +101,7 @@ namespace user_start_page.Chat
                 MessageBox.Show(ex.Message);
             }
         }
-        private void picClose_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             ExitChat();
         }
@@ -119,17 +115,15 @@ namespace user_start_page.Chat
             alive = false;
             client.Close();
 
-            picJoin.Enabled = true;
-            picClose.Enabled = false;
-            picSend.Enabled = false;
+            btnJoin.Enabled = true;
+            btnExit.Enabled = false;
+            btnSend.Enabled = false;
             //tbUserName.ReadOnly = false;
         }
-        private void MessageForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (alive)
                 ExitChat();
         }
-        #endregion
-
     }
 }

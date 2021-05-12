@@ -16,8 +16,6 @@ namespace mysql_crud
     {
         CRUD crud;
 
-
-
         public UserMenu()
         {
             InitializeComponent();
