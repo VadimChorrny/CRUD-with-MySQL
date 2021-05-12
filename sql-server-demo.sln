@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mysql-crud", "mysql-crud\mysql-crud.csproj", "{1EB1F87B-7365-475B-B912-4650049504F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "admin-panel", "mysql-crud\admin-panel.csproj", "{1EB1F87B-7365-475B-B912-4650049504F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "user-start-page", "user-start-page\user-start-page.csproj", "{EC803F5F-2C30-4FA9-AA66-6E2F5FD55B28}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{1EB1F87B-7365-475B-B912-4650049504F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EB1F87B-7365-475B-B912-4650049504F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EB1F87B-7365-475B-B912-4650049504F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC803F5F-2C30-4FA9-AA66-6E2F5FD55B28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC803F5F-2C30-4FA9-AA66-6E2F5FD55B28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC803F5F-2C30-4FA9-AA66-6E2F5FD55B28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC803F5F-2C30-4FA9-AA66-6E2F5FD55B28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

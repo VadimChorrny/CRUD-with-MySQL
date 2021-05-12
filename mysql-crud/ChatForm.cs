@@ -109,7 +109,7 @@ namespace mysql_crud
         }
         private void ExitChat()
         {
-            string message = userName + " покидает чат";
+            string message = userName + " leave chat";
             byte[] data = Encoding.Unicode.GetBytes(message);
             client.Send(data, data.Length, HOST, REMOTEPORT);
             client.DropMulticastGroup(groupAddress);
