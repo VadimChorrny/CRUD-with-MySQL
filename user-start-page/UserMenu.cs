@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using user_start_page.Chat;
 
 namespace user_start_page
 {
@@ -19,7 +20,8 @@ namespace user_start_page
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            MessageForm mf = new MessageForm();
+            mf.Show();
         }
     }
 }

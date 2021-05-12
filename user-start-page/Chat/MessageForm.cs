@@ -1,13 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using System.Windows.Forms;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace mysql_crud
+namespace user_start_page.Chat
 {
-    public partial class ChatForm : Form
+    public partial class MessageForm : Form
     {
         #region properties
         bool alive = false;
@@ -19,15 +24,17 @@ namespace mysql_crud
         IPAddress groupAddress;
         string userName;
         #endregion
-        public ChatForm()
+        public MessageForm()
         {
             InitializeComponent();
 
+            // START INIT
             picJoin.Enabled = true;
             picClose.Enabled = false;
             picSend.Enabled = false;
             tbChat.ReadOnly = true;
             groupAddress = IPAddress.Parse(HOST);
+
         }
         #region work_with_udp
         private void picJoin_Click(object sender, EventArgs e)
@@ -41,7 +48,8 @@ namespace mysql_crud
                 client.JoinMulticastGroup(groupAddress, TTL);
                 Task receiveTask = new Task(ReceiveMessages);
                 receiveTask.Start();
-                string message = userName + " (admin) join in chat!";
+
+                string message = userName + " (user) join in chat!";
                 byte[] data = Encoding.Unicode.GetBytes(message);
                 client.Send(data, data.Length, HOST, REMOTEPORT);
 
@@ -64,6 +72,7 @@ namespace mysql_crud
                     IPEndPoint remoteIp = null;
                     byte[] data = client.Receive(ref remoteIp);
                     string message = Encoding.Unicode.GetString(data);
+
                     this.Invoke(new MethodInvoker(() =>
                     {
                         string time = DateTime.Now.ToShortTimeString();
@@ -102,7 +111,7 @@ namespace mysql_crud
         }
         private void ExitChat()
         {
-            string message = userName + " (admin) leave chat";
+            string message = userName + " (user) leave chat";
             byte[] data = Encoding.Unicode.GetBytes(message);
             client.Send(data, data.Length, HOST, REMOTEPORT);
             client.DropMulticastGroup(groupAddress);
@@ -115,11 +124,12 @@ namespace mysql_crud
             picSend.Enabled = false;
             //tbUserName.ReadOnly = false;
         }
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void MessageForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (alive)
                 ExitChat();
         }
         #endregion
+
     }
 }
