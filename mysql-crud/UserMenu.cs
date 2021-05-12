@@ -74,5 +74,17 @@ namespace mysql_crud
             EditAccount ed = new EditAccount();
             ed.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ActivityForm activity = new ActivityForm();
+            activity.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ChatForm chat = new ChatForm();
+            chat.Show();
+        }
     }
 }

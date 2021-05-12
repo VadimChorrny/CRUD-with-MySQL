@@ -33,6 +33,8 @@ namespace mysql_crud
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -47,7 +49,7 @@ namespace mysql_crud
             // 
             // btnMyProducts
             // 
-            this.btnMyProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnMyProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.btnMyProducts.Location = new System.Drawing.Point(20, 19);
             this.btnMyProducts.Name = "btnMyProducts";
             this.btnMyProducts.Size = new System.Drawing.Size(220, 64);
@@ -58,8 +60,8 @@ namespace mysql_crud
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button2.Location = new System.Drawing.Point(20, 107);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button2.Location = new System.Drawing.Point(20, 264);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(220, 64);
             this.button2.TabIndex = 1;
@@ -69,18 +71,20 @@ namespace mysql_crud
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button3.Location = new System.Drawing.Point(20, 196);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button3.Location = new System.Drawing.Point(20, 350);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(220, 64);
             this.button3.TabIndex = 2;
-            this.button3.Text = "About App";
+            this.button3.Text = "Our team";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(255)))), ((int)(((byte)(214)))));
+            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.btnMyProducts);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
@@ -88,6 +92,28 @@ namespace mysql_crud
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(259, 426);
             this.panel1.TabIndex = 3;
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button5.Location = new System.Drawing.Point(20, 97);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(220, 64);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "Sellers chat";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button4.Location = new System.Drawing.Point(20, 179);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(220, 64);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "My Activity";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // panel2
             // 
@@ -177,5 +203,7 @@ namespace mysql_crud
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
