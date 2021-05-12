@@ -54,7 +54,8 @@ namespace mysql_crud
         {
             crud.name = txtCreateName.Text;
             crud.describe = txtCreateDescribes.Text; // real number
-            crud.price = u_txtPrice.Text;
+            crud.price = txtCreatePrice.Text;
+            crud.fullname = txtCreateFullName.Text;
             crud.Create_data();
         }
         // UPDATE
@@ -63,6 +64,7 @@ namespace mysql_crud
             crud.name = u_txtName.Text;
             crud.describe = u_txtDescribes.Text; // real number
             crud.price = u_txtPrice.Text;
+            crud.fullname = u_txtFullName.Text;
             crud.id = IDTXT.Text;
             crud.Update_data();
         }
@@ -86,6 +88,7 @@ namespace mysql_crud
                     u_txtName.Text = (dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
                     u_txtDescribes.Text = (dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
                     u_txtPrice.Text = (dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
+                    u_txtFullName.Text = (dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
 
                 }
             }

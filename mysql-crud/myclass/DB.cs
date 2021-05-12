@@ -29,9 +29,13 @@ namespace mysql_crud.myclass
         public string name { get; set; }
         public string describe { get; set; }
         public string price { get; set; }
+        public string fullname { get; set; }
 
         // FOR ID
         public string id { set; get; }
+
+        // FOR SEARCH
+        UserMenu userMenu;
 
         // READ PROPERTIES
         public DataTable dt = new DataTable();
@@ -43,12 +47,13 @@ namespace mysql_crud.myclass
             con.Open();
             using (MySqlCommand cmd = new MySqlCommand())
             {
-                cmd.CommandText = "INSERT INTO `products`(`Name`, `Describes`, `Price`) VALUES (@name,@desc,@price)";
+                cmd.CommandText = "INSERT INTO `products`(`Name`, `Describes`, `Price`,`Fullname`) VALUES (@name,@desc,@price,@fullname)";
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = con;
                 cmd.Parameters.Add("@name", MySqlDbType.VarChar).Value = name;
                 cmd.Parameters.Add("@desc", MySqlDbType.VarChar).Value = describe;
                 cmd.Parameters.Add("@price", MySqlDbType.VarChar).Value = price;
+                cmd.Parameters.Add("@fullname", MySqlDbType.VarChar).Value = fullname;
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
@@ -60,16 +65,15 @@ namespace mysql_crud.myclass
             con.Open();
             using (MySqlCommand cmd = new MySqlCommand())
             {
-                cmd.CommandText = "UPDATE products SET Name = @name, Describes = @desc, Price = @price WHERE ID = @id";
+                cmd.CommandText = "UPDATE products SET Name = @name, Describes = @desc, Price = @price, Fullname = @fullname WHERE ID = @id";
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = con;
 
                 cmd.Parameters.Add("@name", MySqlDbType.VarChar).Value = name;
                 cmd.Parameters.Add("@desc", MySqlDbType.VarChar).Value = describe;
                 cmd.Parameters.Add("@price", MySqlDbType.VarChar).Value = price;
-
+                cmd.Parameters.Add("@fullname", MySqlDbType.VarChar).Value = fullname;
                 cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
-
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
@@ -97,10 +101,31 @@ namespace mysql_crud.myclass
         {
             dt.Clear();
             string query = "SELECT * FROM `products`";
-            MySqlDataAdapter MDA = new MySqlDataAdapter(query,con);
+            MySqlDataAdapter MDA = new MySqlDataAdapter(query, con);
             MDA.Fill(ds);
-            dt = ds.Tables[0]; 
+            dt = ds.Tables[0];
+        }
+
+        // SEARCH FUNCTION
+        public void Search_data()
+        {
+            con.Open();
+            try
+            {
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandText = $"SELECT `ID`, `Name`, `Describes`, `Price`, `Fullname` FROM `products` WHERE ID = " + userMenu.txtSearch.Text;
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+            }
+            catch (Exception)
+            {
+                System.Windows.Forms.MessageBox.Show("Please complete correct the fields");
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open) con.Clone();
+            }
         }
     }
-
 }

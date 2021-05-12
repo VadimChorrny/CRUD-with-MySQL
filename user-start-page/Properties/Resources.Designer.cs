@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace mysql_crud.Properties {
+namespace user_start_page.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace mysql_crud.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("mysql_crud.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("user_start_page.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,16 +57,6 @@ namespace mysql_crud.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap devteam {
-            get {
-                object obj = ResourceManager.GetObject("devteam", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -103,9 +93,9 @@ namespace mysql_crud.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap team {
+        internal static System.Drawing.Bitmap programmer {
             get {
-                object obj = ResourceManager.GetObject("team", resourceCulture);
+                object obj = ResourceManager.GetObject("programmer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

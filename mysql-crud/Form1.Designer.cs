@@ -50,6 +50,10 @@ namespace mysql_crud
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtCreateFullName = new System.Windows.Forms.TextBox();
+            this.u_txtFullName = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -58,6 +62,8 @@ namespace mysql_crud
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtCreateFullName);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.btnSave);
             this.groupBox1.Controls.Add(this.txtCreatePrice);
             this.groupBox1.Controls.Add(this.txtCreateDescribes);
@@ -67,14 +73,14 @@ namespace mysql_crud
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(405, 159);
+            this.groupBox1.Size = new System.Drawing.Size(405, 184);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Create";
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(256, 127);
+            this.btnSave.Location = new System.Drawing.Point(284, 147);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(121, 31);
             this.btnSave.TabIndex = 8;
@@ -133,9 +139,9 @@ namespace mysql_crud
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 172);
+            this.groupBox2.Location = new System.Drawing.Point(12, 195);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(776, 266);
+            this.groupBox2.Size = new System.Drawing.Size(776, 251);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Read/Viewing data";
@@ -145,7 +151,7 @@ namespace mysql_crud
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(30, 35);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 27);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -156,6 +162,8 @@ namespace mysql_crud
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.u_txtFullName);
+            this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.btnDelete);
             this.groupBox3.Controls.Add(this.btnApdate);
             this.groupBox3.Controls.Add(this.u_txtPrice);
@@ -167,14 +175,14 @@ namespace mysql_crud
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Location = new System.Drawing.Point(423, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(365, 159);
+            this.groupBox3.Size = new System.Drawing.Size(365, 184);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Update/Delete";
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(238, 128);
+            this.btnDelete.Location = new System.Drawing.Point(238, 147);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(121, 31);
             this.btnDelete.TabIndex = 11;
@@ -184,7 +192,7 @@ namespace mysql_crud
             // 
             // btnApdate
             // 
-            this.btnApdate.Location = new System.Drawing.Point(6, 127);
+            this.btnApdate.Location = new System.Drawing.Point(6, 147);
             this.btnApdate.Name = "btnApdate";
             this.btnApdate.Size = new System.Drawing.Size(121, 31);
             this.btnApdate.TabIndex = 9;
@@ -249,11 +257,43 @@ namespace mysql_crud
             this.label5.TabIndex = 6;
             this.label5.Text = "DESCRIBES:";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 115);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(85, 17);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "FULLNAME:";
+            // 
+            // txtCreateFullName
+            // 
+            this.txtCreateFullName.Location = new System.Drawing.Point(113, 115);
+            this.txtCreateFullName.Name = "txtCreateFullName";
+            this.txtCreateFullName.Size = new System.Drawing.Size(262, 22);
+            this.txtCreateFullName.TabIndex = 10;
+            // 
+            // u_txtFullName
+            // 
+            this.u_txtFullName.Location = new System.Drawing.Point(97, 115);
+            this.u_txtFullName.Name = "u_txtFullName";
+            this.u_txtFullName.Size = new System.Drawing.Size(262, 22);
+            this.u_txtFullName.TabIndex = 12;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 115);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(85, 17);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "FULLNAME:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 464);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -292,6 +332,10 @@ namespace mysql_crud
         private System.Windows.Forms.TextBox u_txtPrice;
         private System.Windows.Forms.TextBox u_txtDescribes;
         private System.Windows.Forms.TextBox u_txtName;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        protected internal System.Windows.Forms.TextBox txtCreateFullName;
+        protected internal System.Windows.Forms.TextBox u_txtFullName;
     }
 }
 
