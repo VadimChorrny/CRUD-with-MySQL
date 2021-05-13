@@ -57,7 +57,7 @@ namespace mysql_crud.myclass
                 cmd.Parameters.Add("@desc", MySqlDbType.VarChar).Value = describe;
                 cmd.Parameters.Add("@price", MySqlDbType.VarChar).Value = price;
                 cmd.Parameters.Add("@fullname", MySqlDbType.VarChar).Value = fullname;
-                cmd.Parameters.Add("@image", MySqlDbType.Blob).Value = str;
+                cmd.Parameters.Add("@image", MySqlDbType.LongBlob).Value = str;
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
@@ -77,7 +77,7 @@ namespace mysql_crud.myclass
                 cmd.Parameters.Add("@desc", MySqlDbType.VarChar).Value = describe;
                 cmd.Parameters.Add("@price", MySqlDbType.VarChar).Value = price;
                 cmd.Parameters.Add("@fullname", MySqlDbType.VarChar).Value = fullname;
-                cmd.Parameters.Add("@image", MySqlDbType.Blob).Value = str;
+                cmd.Parameters.Add("@image", MySqlDbType.LongBlob).Value = str;
 
                 cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
 

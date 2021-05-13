@@ -9,12 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.IO;
 
 namespace mysql_crud
 {
     public partial class UserMenu : Form
     {
         CRUD crud;
+        MySqlConnection connection = new MySqlConnection("datasource=localhost;database=product;port=3306;username=root;password=");
+        MySqlCommand cmd;
+        MySqlDataAdapter da;
+        DataTable dt;
+
 
         public UserMenu()
         {
@@ -32,6 +38,7 @@ namespace mysql_crud
             //dataGridView1.DataSource = null;
             //crud.Search_data();
             //dataGridView1.DataSource = crud.dt;
+
             string pass = "";
             string connStr = "server=localhost;user=root;database=product;port=3306;password=" + pass;
             MySqlConnection conn = new MySqlConnection(connStr);
@@ -50,6 +57,7 @@ namespace mysql_crud
                     listBox1.Items.Add(rdr["Describes"]);
                     listBox1.Items.Add(rdr["Price"]);
                     listBox1.Items.Add(rdr["Fullname"]);
+                    //OutPutFuckingImage();
                 }
                 rdr.Close();
                 MessageBox.Show("Done!");
@@ -59,6 +67,21 @@ namespace mysql_crud
                 MessageBox.Show(ex.ToString());
             }
             conn.Close();
+        }
+        private void OutPutFuckingImage()
+        {
+            String selectQuery = "SELECT `ID`,`Name`,`Describes`,`Price`,`Fullname`,`Image` FROM `products` ";
+            //string user_input = txtSearch.Text;
+            //cmd.Parameters.AddWithValue("@name", user_input);
+            cmd = new MySqlCommand(selectQuery, connection);
+            da = new MySqlDataAdapter(cmd);
+
+            DataTable table = new DataTable();
+            da.Fill(table);
+            byte[] img = (byte[])table.Rows[0][3];
+            MemoryStream ms = new MemoryStream(img);
+            pictureBox1.Image = Image.FromStream(ms);
+            da.Dispose();
         }
 
         private void button3_Click(object sender, EventArgs e)
