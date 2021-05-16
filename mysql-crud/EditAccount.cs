@@ -23,6 +23,13 @@ namespace mysql_crud
 
         private void button1_Click(object sender, EventArgs e)
         {
+            SetRegData();
+        }
+        /// <summary>
+        /// function for change login and password
+        /// </summary>
+        public void SetRegData()
+        {
             MySqlConnection con;
             string host = "localhost";
             string db = "product";
@@ -35,7 +42,7 @@ namespace mysql_crud
             con.Open();
             using (MySqlCommand cmd = new MySqlCommand())
             {
-                cmd.CommandText = "UPDATE `users` SET ID=@id,Login=@login,Password=@password WHERE ID ="+rf.id;
+                cmd.CommandText = "UPDATE `users` SET ID=@id,Login=@login,Password=@password WHERE ID =" + rf.id;
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = con;
                 cmd.Parameters.Add("@login", MySqlDbType.VarChar).Value = txtLogin.Text;

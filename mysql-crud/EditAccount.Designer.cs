@@ -114,12 +114,11 @@ namespace mysql_crud
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtPass;
-        private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        protected internal System.Windows.Forms.TextBox txtPass;
+        protected internal System.Windows.Forms.TextBox txtLogin;
     }
 }
