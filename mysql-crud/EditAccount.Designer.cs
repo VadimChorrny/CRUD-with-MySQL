@@ -29,6 +29,7 @@ namespace mysql_crud
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditAccount));
             this.txtPass = new System.Windows.Forms.TextBox();
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
@@ -104,8 +105,9 @@ namespace mysql_crud
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.txtPass);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditAccount";
-            this.Text = "EditAccount";
+            this.Text = "Edit Account";
             this.ResumeLayout(false);
             this.PerformLayout();
 

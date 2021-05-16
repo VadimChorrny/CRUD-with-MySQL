@@ -29,6 +29,7 @@ namespace mysql_crud
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrationForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbLogin = new System.Windows.Forms.TextBox();
@@ -69,6 +70,7 @@ namespace mysql_crud
             this.tbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.tbPassword.Location = new System.Drawing.Point(76, 219);
             this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(221, 36);
             this.tbPassword.TabIndex = 3;
             // 
@@ -93,8 +95,9 @@ namespace mysql_crud
             this.Controls.Add(this.tbLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegistrationForm";
-            this.Text = "RegistrationForm";
+            this.Text = "Account";
             this.ResumeLayout(false);
             this.PerformLayout();
 
