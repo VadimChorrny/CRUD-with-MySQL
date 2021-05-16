@@ -26,6 +26,6 @@ Example: You have a wholesale product for sale, you want more people to know abo
 
 #### In future versions of the project I will add the opportunity to:
 
-- Сторінка користувача
-- Чат з продавцем
-- Кошик
+- User page
+- Chat with the seller
+- Basket
