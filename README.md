@@ -29,3 +29,5 @@ Example: You have a wholesale product for sale, you want more people to know abo
 - User page
 - Chat with the seller
 - Basket
+
+### Powered by Circle
